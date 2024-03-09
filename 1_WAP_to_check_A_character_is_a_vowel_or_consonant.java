@@ -18,7 +18,13 @@ class A {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        char ch = sc.next().charAt(0);
+        char ch;
+        if (args.length > 0) {
+            ch = args[0].charAt(0);
+        } else {
+            System.out.print("Enter a character: ");
+            ch = sc.next().charAt(0);
+        }
         A obj = new A();
         obj.checkVowelOrConsonant(ch);
     }
